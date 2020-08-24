@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/startpage",
+      "handler": "startpage.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/startpage",
+      "handler": "startpage.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/startpage",
+      "handler": "startpage.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

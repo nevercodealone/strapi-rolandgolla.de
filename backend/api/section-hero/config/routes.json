@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/section-heroes",
+      "handler": "section-hero.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/section-heroes/count",
+      "handler": "section-hero.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/section-heroes/:id",
+      "handler": "section-hero.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/section-heroes",
+      "handler": "section-hero.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/section-heroes/:id",
+      "handler": "section-hero.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/section-heroes/:id",
+      "handler": "section-hero.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

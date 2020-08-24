@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "startpages",
+  "info": {
+    "name": "Startpage"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.startpage"
+    }
+  }
+}
