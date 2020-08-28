@@ -12,6 +12,7 @@
     "core-js": "^2.6.5",
     "tailwindcss": "^1.0.3",
     "vue": "^2.6.10",
+    "vue-entypo-icons": "^1.0.8",
     "vue-showdown": "^2.4.1",
     "vue-simple-markdown": "^1.1.4"
   },
