@@ -23,7 +23,7 @@
       <div class="w-full md:w-3/5 text-center p-6">
         <img class="w-full z-50" src="https://picsum.photos/600/520">
         <div class="px-6 pt-4 pb-2">
-          <ArrowBoldLeft class="stroke-current text-500 inline-block h-12 w-12" />
+          <font-awesome-icon :icon='[ "fab", "github" ]' />    
         </div>
       </div>
     </div>
@@ -33,16 +33,10 @@
 <script>
 import axios from 'axios'
 import { VueShowdown } from 'vue-showdown'
-import AddToList from 'vue-entypo-icons/lib/AddToList'
-import ArrowBoldLeft from 'vue-entypo-icons/lib/ArrowBoldLeft'
-import User from 'vue-entypo-icons/lib/User'
 
 export default {
   name: 'hero',
   components: {
-    AddToList,
-    ArrowBoldLeft,
-    User,
     VueShowdown
   },
   data () {
