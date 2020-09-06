@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_navigation_social_link_lists",
+  "info": {
+    "name": "social-link-list",
+    "icon": "transgender-alt"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

@@ -22,8 +22,12 @@
       <!--Right Col-->
       <div class="w-full md:w-3/5 text-center p-6">
         <img class="w-full z-50" src="https://picsum.photos/600/520">
-        <div class="px-6 pt-4 pb-2">
-          <font-awesome-icon :icon='[ "fab", "github" ]' />    
+        <div class="px-6 pt-4 pb-2" v-if="hero.hero.sociallinklist">
+          <span v-for="(item, index) in hero.hero.sociallinklist" :key="index">
+            <a class="text-5xl p-5 transition duration-700 ease-in-out hover:bg-red-500 transform hover:-translate-y-1" :href="item.link" target="_blank">
+              <font-awesome-icon :icon='[ "fab", item.icon ]' />
+            </a>
+          </span>    
         </div>
       </div>
     </div>
@@ -47,8 +51,10 @@ export default {
   },
   async mounted () {
     try {
-      const response = await axios.get('http://localhost:1337/startpage')
-      this.hero = response.data
+      const response = await axios.get('http://localhost:1337/startpage');
+      this.hero = response.data;
+      console.log(this.hero);
+      console.log(this.hero.hero.sociallinklist);
     } catch (error) {
       this.error = error;
     }

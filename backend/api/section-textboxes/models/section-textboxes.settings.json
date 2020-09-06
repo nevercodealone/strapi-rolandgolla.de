@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "section_textboxes",
+  "info": {
+    "name": "Section-textboxes"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "textboxes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.textboxes"
+    }
+  }
+}

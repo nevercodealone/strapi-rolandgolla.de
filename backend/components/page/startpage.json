@@ -30,6 +30,16 @@
       "type": "component",
       "repeatable": false,
       "component": "page.button"
+    },
+    "sociallinklist": {
+      "type": "component",
+      "repeatable": true,
+      "component": "navigation.social-link-list"
+    },
+    "textboxes": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content.textboxes"
     }
   }
 }

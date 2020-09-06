@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/section-textboxes",
+      "handler": "section-textboxes.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/section-textboxes/count",
+      "handler": "section-textboxes.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/section-textboxes/:id",
+      "handler": "section-textboxes.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/section-textboxes",
+      "handler": "section-textboxes.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/section-textboxes/:id",
+      "handler": "section-textboxes.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/section-textboxes/:id",
+      "handler": "section-textboxes.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
