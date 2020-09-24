@@ -38,7 +38,7 @@
     },
     "textboxes": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "content.textboxes"
     }
   }

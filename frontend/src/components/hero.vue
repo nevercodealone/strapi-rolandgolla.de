@@ -21,7 +21,7 @@
       </div>
       <!--Right Col-->
       <div class="w-full md:w-3/5 text-center p-6">
-        <img class="w-full z-50" src="https://picsum.photos/600/520">
+        <img class="w-full z-50" :src="hero.hero.image.url">
         <div class="px-6 pt-4 pb-2" v-if="hero.hero.sociallinklist">
           <span v-for="(item, index) in hero.hero.sociallinklist" :key="index">
             <a class="text-5xl p-5 transition duration-700 ease-in-out hover:bg-red-500 transform hover:-translate-y-1" :href="item.link" target="_blank">
@@ -35,7 +35,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import { VueShowdown } from 'vue-showdown'
 
 export default {
@@ -45,19 +44,9 @@ export default {
   },
   data () {
     return {
-      hero: {},
-      error: null
+      hero: {}
     }
   },
-  async mounted () {
-    try {
-      const response = await axios.get('http://localhost:1337/startpage');
-      this.hero = response.data;
-      console.log(this.hero);
-      console.log(this.hero.hero.sociallinklist);
-    } catch (error) {
-      this.error = error;
-    }
-  }
+  
 }
 </script>
