@@ -5,10 +5,6 @@
 <script>
 import hero from './components/hero.vue'
 
-
-
-console.error('app');
-
 export default {
   name: 'app',
   components: {

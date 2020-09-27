@@ -6,22 +6,19 @@
       <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
         <p v-if="hero.subline" v-html="hero.subline" class="uppercase tracking-loose w-full"/>
         <h1 v-html="hero.headline" class="my-4 text-5xl font-bold leading-tight"/>
-        <p class="leading-normal text-2xl mb-8">
+        <p v-if="hero.description" class="leading-normal text-2xl mb-8">
           <VueShowdown
           :markdown="hero.description"
           flavor="github"
           :options="{ emoji: true }"/>  
         </p>
-        
-      
         <a :href="hero.button.target" target="_blank" class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg">
           {{ hero.button.text }}
         </a>
-        
       </div>
       <!--Right Col-->
       <div class="w-full md:w-3/5 text-center p-6">
-        <img class="w-full z-50" :src="hero.image.url">
+        <img class="w-full z-50" :src="hero.imageSrc">
         <div class="px-6 pt-4 pb-2" v-if="hero.sociallinklist">
           <span v-for="(item, index) in hero.sociallinklist" :key="index">
             <a class="text-5xl p-5 transition duration-700 ease-in-out hover:bg-red-500 transform hover:-translate-y-1" :href="item.link" target="_blank">
@@ -48,7 +45,7 @@ export default {
   },
   data () {
     return {
-      hero: {}
+      hero: null
     }
   },
   created() {
@@ -62,6 +59,7 @@ export default {
                 {
                   headline
                   subline
+                  description
                   image {
                     url
                   }
@@ -89,6 +87,7 @@ export default {
     .then((response) => {
       console.log(response)
       this.hero = response.data.startpage.hero
+      this.hero.imageSrc = `${apiUrl}${this.hero.image[0].url}`
     })
     .catch((error) => {
       console.error(error);
