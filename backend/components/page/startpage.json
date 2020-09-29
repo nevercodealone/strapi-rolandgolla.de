@@ -36,6 +36,9 @@
       "repeatable": true,
       "component": "navigation.social-link-list"
     },
+    "textboxesheadline": {
+      "type": "string"
+    },
     "textboxes": {
       "type": "component",
       "repeatable": true,
