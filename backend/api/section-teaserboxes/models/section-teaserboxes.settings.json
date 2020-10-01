@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "section_teaserboxes",
+  "info": {
+    "name": "Section Teaserboxes"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "teaserboxes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.teaserboxes"
+    }
+  }
+}

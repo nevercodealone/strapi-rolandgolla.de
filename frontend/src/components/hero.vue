@@ -67,6 +67,48 @@
       </div>
     
     </section>
+    <section v-if="hero.teaserboxes.length > 0" class="bg-white border-b py-8">
+      <div class="container max-w-5xl mx-auto m-8">
+        <h1 v-if="hero.teaserboxesheadline" class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+          {{ hero.teaserboxesheadline }}
+        </h1>
+        <div class="w-full mb-4">	
+          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+        </div>
+      
+        <div v-for="(item, index) in hero.teaserboxes" :key="index" :class="{'flex flex-wrap flex-col-reverse sm:flex-row': index % 2, 'flex flex-wrap': !(index % 2)}">
+          <div v-if="index % 2" class="w-5/6 sm:w-1/2 p-6">
+            <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+              {{ item.title }}
+            </h3>
+            <p v-if="item.description" class="text-gray-600 mb-8">
+              <VueShowdown
+              :markdown="item.description"
+              flavor="github"
+              :options="{ emoji: true }"/>  
+            </p>
+          </div>
+          <div v-if="index % 2" class="w-full sm:w-1/2 p-6">
+            <img :src="apiUrl + item.image.url" class="w-5/6 sm:h-64 mx-auto"/>
+          </div>
+
+          <div v-if="!(index % 2)" class="w-full sm:w-1/2 p-6">
+            <img :src="apiUrl + item.image.url" class="w-5/6 sm:h-64 mx-auto"/>
+          </div>
+          <div v-if="!(index % 2)" class="w-5/6 sm:w-1/2 p-6">
+            <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+              {{ item.title }}
+            </h3>
+            <p v-if="item.description" class="text-gray-600 mb-8">
+              <VueShowdown
+              :markdown="item.description"
+              flavor="github"
+              :options="{ emoji: true }"/>  
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
   
 </template>
@@ -85,6 +127,7 @@ export default {
   },
   data () {
     return {
+      apiUrl: apiUrl,
       hero: null
     }
   },
@@ -118,6 +161,14 @@ export default {
                     text
                     linktext
                     linktarget
+                  }
+                  teaserboxesheadline
+                  teaserboxes {
+                    title
+                    description
+                    image {
+                      url
+                    }
                   }
                 }
             }
