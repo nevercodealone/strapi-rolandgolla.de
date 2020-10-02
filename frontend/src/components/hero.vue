@@ -77,21 +77,6 @@
         </div>
       
         <div v-for="(item, index) in hero.teaserboxes" :key="index" :class="{'flex flex-wrap flex-col-reverse sm:flex-row': index % 2, 'flex flex-wrap': !(index % 2)}">
-          <div v-if="index % 2" class="w-5/6 sm:w-1/2 p-6">
-            <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
-              {{ item.title }}
-            </h3>
-            <p v-if="item.description" class="text-gray-600 mb-8">
-              <VueShowdown
-              :markdown="item.description"
-              flavor="github"
-              :options="{ emoji: true }"/>  
-            </p>
-          </div>
-          <div v-if="index % 2" class="w-full sm:w-1/2 p-6">
-            <img :src="apiUrl + item.image.url" class="w-5/6 sm:h-64 mx-auto"/>
-          </div>
-
           <div v-if="!(index % 2)" class="w-full sm:w-1/2 p-6">
             <img :src="apiUrl + item.image.url" class="w-5/6 sm:h-64 mx-auto"/>
           </div>
@@ -99,12 +84,26 @@
             <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
               {{ item.title }}
             </h3>
-            <p v-if="item.description" class="text-gray-600 mb-8">
+            <p v-if="item.description" class="text-gray-600 mb-8 teaserbox-p">
               <VueShowdown
               :markdown="item.description"
               flavor="github"
               :options="{ emoji: true }"/>  
             </p>
+          </div>
+          
+          <div v-if="index % 2" class="w-5/6 sm:w-1/2 p-6">
+            <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+              {{ item.title }} here
+            </h3>
+            <p v-if="item.description" class="text-gray-600 mb-8 teaserbox-p">
+              <VueShowdown
+              :markdown="item.description"
+              flavor="github"/>  
+            </p>
+          </div>
+          <div v-if="index % 2" class="w-full sm:w-1/2 p-6">
+            <img :src="apiUrl + item.image.url" class="w-5/6 sm:h-64 mx-auto"/>
           </div>
         </div>
       </div>
