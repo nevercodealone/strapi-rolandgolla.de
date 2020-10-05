@@ -17,7 +17,6 @@ var scrollpos = window.scrollY;
 var header = document.getElementById("header");
 var navcontent = document.getElementById("nav-content");
 var navaction = document.getElementById("navAction");
-var brandname = document.getElementById("brandname");
 var toToggle = document.querySelectorAll(".toggleColour");
 
 document.addEventListener('scroll', function() {
@@ -47,8 +46,8 @@ document.addEventListener('scroll', function() {
     navaction.classList.remove("text-white");
     navaction.classList.add("text-gray-800");
     //Use to switch toggleColour colours
-      for (var i = 0; i < toToggle.length; i++) {
-        toToggle[i].classList.add("text-white");
+    for (i = 0; i < toToggle.length; i++) {
+      toToggle[i].classList.add("text-white");
       toToggle[i].classList.remove("text-gray-800");
     }
     
