@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gradient {
+    background: linear-gradient(90deg, #000000 0%, #5fbb28 100%);
+  }
+
+  #icon-bug {
+    -webkit-animation: findingbug linear 2s infinite;
+            animation: findingbug linear 2s infinite;
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+
+  @-webkit-keyframes findingbug {
+    0% {
+      -webkit-transform: translate(0px, 0px);
+              transform: translate(0px, 0px);
+    }
+    25% {
+      -webkit-transform: translate(59px, -43px);
+              transform: translate(59px, -43px);
+    }
+    49% {
+      -webkit-transform: translate(48px, 21px);
+              transform: translate(48px, 21px);
+    }
+    68% {
+      -webkit-transform: translate(1px, 13px);
+              transform: translate(1px, 13px);
+    }
+    90% {
+      -webkit-transform: translate(0px, 0px);
+              transform: translate(0px, 0px);
+    }
+    100% {
+      -webkit-transform: translate(0px, 0px);
+              transform: translate(0px, 0px);
+    }
+  }
+
+  @keyframes findingbug {
+    0% {
+      -webkit-transform: translate(0px, 0px);
+              transform: translate(0px, 0px);
+    }
+    25% {
+      -webkit-transform: translate(59px, -43px);
+              transform: translate(59px, -43px);
+    }
+    49% {
+      -webkit-transform: translate(48px, 21px);
+              transform: translate(48px, 21px);
+    }
+    68% {
+      -webkit-transform: translate(1px, 13px);
+              transform: translate(1px, 13px);
+    }
+    90% {
+      -webkit-transform: translate(0px, 0px);
+              transform: translate(0px, 0px);
+    }
+    100% {
+      -webkit-transform: translate(0px, 0px);
+              transform: translate(0px, 0px);
+    }
+  }
+
+.teaserbox-p p {margin-bottom: 5px;}
+.teaserbox-p a {text-decoration: underline;}
