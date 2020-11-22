@@ -1,5 +1,6 @@
 const tailwind = require('tailwindcss')
 const purgecss = require('@fullhuman/postcss-purgecss')
+const axios = require('axios')
 
 const postcssPlugins = [
   tailwind(),
@@ -11,7 +12,12 @@ module.exports = {
   siteName: 'Roland Golla',
   plugins: [
     {
-      use: "gridsome-plugin-tailwindcss"
+      use: "gridsome-plugin-tailwindcss",
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'docs/**/*.md',
+        typeName: 'StartPage'
+      }
     }
   ],
   css: {
