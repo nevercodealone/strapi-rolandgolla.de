@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@gridsome/source-strapi": "^0.2.0"
+  }
+}
